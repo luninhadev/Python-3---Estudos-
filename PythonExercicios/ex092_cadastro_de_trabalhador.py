@@ -28,3 +28,20 @@ print(f'Salário: R${trabalhador["carteira de trabalho"]["salario"]}')
 if carteira in 'S':
     aposentadoria = 35 - (date.today().year - trabalhador['carteira de trabalho']['ano contratacao'])
     print(f'Tempo para aposentar: {aposentadoria} ano(s)')
+
+'''Solução Prof
+from datetime import date
+trabalhador = dict()
+print(f'{"Cadastro de Trabalhador":^41}')
+trabalhador['nome'] = str(input('Digite seu nome: '))
+nascimento = int(input('Digite seu ano de nascimento: '))
+trabalhador['idade'] = date.today().year - nascimento
+carteira = str(input('Tem carteira de trabalho [S/N]: ')).upper()
+if carteira in 'S':
+    trabalhador['ano contratacao'] = int(input('Digite o ano de contratação: '))
+    trabalhador['salario'] = float(input('Digite o salario: '))
+    trabalhador['aposentadoria'] = trabalhador['idade'] + ((trabalhador['ano contratacao'] + 35) - date.today().year)
+print(f'{"Trabalhador Cadastrado":-^41}')
+for k, v in trabalhador.items():
+    print(f'  - {k} tem o valor {v}')
+'''
