@@ -15,10 +15,10 @@ for c in range(0, partidas):
 print(f'{"Dados do jogador":-^41}')
 print(jogador)
 print(f'{"Aproveitamento do jogador":-^41}')
-print(f'Nome: {jogador["nome"]}')
-print(f'Gols feitos: {jogador["gols"]}')
-print(f'Total de gols: {jogador["total"]}')
+for k, v in jogador.items():
+    print(f'O campo {k} tem o valor {v}')
 print(f'{"Aproveitamento do Jogador":-^41}')
 print(f'{jogador["nome"]} jogou {partidas} partidas')
-for c in range(0, partidas):
-    print(f'=> Na partida {c + 1}, fez {jogador["gols"][c]} gols')
+for i, v in enumerate(jogador['gols']):
+    print(f'=> Na partida {i + 1}, fez {v} gols')
+print(f'Total de gols: {jogador['total']}')
