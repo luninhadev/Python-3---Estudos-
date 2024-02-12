@@ -1,15 +1,11 @@
 def leiaDinheiro(din):
-    ok = False
+    valido = False
     valor = 0
     while True:
-        n = str(input(din))
-        if n.isnumeric():
-            valor = int(n)
-            ok = True
+        n = str(input(din)).replace(',', '.').strip()
+        if n.isalpha() or n.strip() == '':
+            print(f'\033[0;31mERRO! \"{n}\" é um preço inválido.\033[m')
         else:
-            print(f'\033[0;31mERRO! Digite um valor monetário.\033[m')
-        if ok:
-            break
-    return valor
-
+            valido = True
+            return float(n)
 

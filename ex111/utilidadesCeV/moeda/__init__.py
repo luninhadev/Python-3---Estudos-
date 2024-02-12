@@ -1,4 +1,12 @@
 def metade(v=0, sit=False):
+    '''
+    ->Calcula o aumento de um determinado preço,
+    retornando o resultado com ou sem formatação.
+    :param v: valor que se quer reajustar
+    :param a: porcentagem do aumento
+    :param r: porcentagem da redução
+    :return: o valor reajustado com ou sem formatação
+    '''
     resp = v / 2
     moeda = 'R$'
     if sit:
